@@ -1,0 +1,558 @@
+:root {
+    --color-fondos: rgb(10, 24, 40);
+    --color-letras: rgb(191, 161, 129);
+    --color-titulos: rgb(191, 161, 129);
+    --color-btn: rgb(10, 24, 40);
+    --color-btnh: rgb(23, 133, 130);
+    --color-menuf: rgb(10, 24, 40);
+    --color-bordes: #101010;
+
+    /*--color-Modfondos: rgb(32, 61, 89, 35);
+    --color-Modletras: #f5f5f5;
+    --color-Modtitulos:;
+    --color-Modbtn: #2595D2;
+    --color-Modbtnh: #93cceb;
+    --color-Modmenuf: rgb(37, 149, 210, 0.8);
+    --color-bordes: #101010;*/
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Play', sans-serif;
+    max-width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--color-fondos);
+    display: flex;
+    flex-direction: column;
+}
+body .modoscuro {
+    background-color: var(--color-Modfondos);
+}
+header {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    background-color: var(--color-fondos);
+}
+header .logo {
+    width: 50%;
+    height: 100%;
+    padding-right: 50px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+header .logo img {
+    width: 120px;
+}
+header .leyenda {
+    width: 50%;
+    height: 100%;
+    padding-top: 15px;
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 45px;
+    color: var(--color-titulos);
+}
+@media screen and (max-width: 600px) {
+    header {
+        padding: 5px 5px;
+    }
+    header .logo {
+        padding-right: 10px;
+    }
+    header .logo img {
+        width: 100px;
+    }
+    header .leyenda {
+        font-size: 35px;
+        padding-top: 18px;
+    }
+}
+
+                            /* -_-_-_- INICIO propiedades de la barra de menu -_-_-_- */
+nav {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-btn);
+}
+nav ul {
+    position: relative;
+    list-style: none;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav li {
+    text-align: center;
+}
+nav li:hover {
+    background: var(--color-btnh);
+}
+nav li a {
+    position: relative;
+    display: block;
+    padding: 15px 25px;
+    color: var(--color-letras);
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+nav li a:hover {
+    font-weight: 700;
+}
+@media screen and (max-width: 800px){
+    nav li a {
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+                            /* -_-_-_- FIN propiedades de la barra de menu -_-_-_- */
+
+
+                            /* -_-_-_- INICIO propiedades de menu flotante -_-_-_- */
+.menu__flotante {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background: var(--color-menuf);
+    border-bottom: 1px solid var(--color-bordes);
+}
+                            /* -_-_-_- FIN propiedades de menu flotante -_-_-_- */
+
+.cont {
+    width: 100%;
+    display: grid;
+    /*background: #fff;*/
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.cont .titulo {
+    padding: 30px 45px;
+    font-size: 20px;
+    color: var(--color-titulos);
+}
+.cont .texto {
+    text-align: justify;
+    color: var(--color-letras);
+    font-size: 18px;
+    padding: 20px 35px;
+}
+.cont form {
+    padding: 30px 45px;
+}
+
+                            /* -_-_-_- INICIO propiedades del btn flotante -_-_-_- */
+#btn-mas {
+    display: none;
+}
+.btn__flotante {
+    position: fixed;
+    bottom: 55px;
+    right: 10px;
+
+}
+.btn-nav a, .btn__flotante img {
+    display: block;
+    text-decoration: none;
+    width: 55px;
+    height: 55px;
+    line-height: 45px;
+    transition: all 250ms ease;
+}
+.btn__flotante img:hover {
+    opacity: 0.5;
+}
+.btn-nav a {
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-mas:checked~ .btn-nav a {
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+.btn-mas img {
+    cursor: pointer;
+    background-color: var(--color-btn);
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+}
+#btn-mas:checked~ .btn-mas img {
+    transform: rotate(137deg);
+    background-color: var(--color-btnh);
+}
+@media screen and (max-width: 800px) {
+    .btn__flotante {
+        bottom: 70px;
+        right: 5px;
+    }
+    .btn-nav a, .btn__flotante img {
+        width: 40px;
+        height: 40px;
+    }
+    .btn-mas img {
+        width: 40px;
+        height: 40px;
+    }
+}
+                            /* -_-_-_- FIN propiedades del btn flotante -_-_-_- */
+
+                            /* -_-_-_- INICIO propiedades del slider del index -_-_-_- */
+.slider__prin {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-top: solid 2px var(--color-bordes);
+}
+.slider__prin ul {
+    display: flex;
+    padding: 0;
+    width: 500%;
+
+    animation: sliderjf 25s infinite alternate;
+    animation-timing-function: linear;
+}
+.slider__prin li {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.slider__prin img {
+    width: 100%;
+}
+@keyframes sliderjf {
+    0% {margin-left: 0;}
+    15% {margin-left: 0;}
+
+    20% {margin-left: -100%;}
+    35% {margin-left: -100%;}
+
+    40% {margin-left: -200%;}
+    55% {margin-left: -200%;}
+
+    60% {margin-left: -300%;}
+    75% {margin-left: -300%;}
+
+    80% {margin-left: -400%;}
+    100% {margin-left: -400%;}
+}
+                            /* -_-_-_- FINAL propiedades del slider del index -_-_-_- */
+
+                            /* -_-_-_- INICIO propiedades de sección nosotros -_-_-_- */
+.cont_nosotros {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+#nosotros .nosotros {
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nosotros .nosotros-header h1 {
+    margin-bottom: 50px;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--color-titulos);
+}
+#nosotros .all-nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#nosotros .nosotros-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+#nosotros .nosotros-info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, var(--color-btn) 0%,  var(--color-btnh) 100%);
+    color: var(--color-letras);
+}
+#nosotros .nosotros-info h1 {
+    color: var(--color-titulos);
+    font-size: 3rem;
+    font-weight: 500;
+}
+#nosotros .nosotros-info h2 {
+    color: var(--color-letras);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+#nosotros .nosotros-info p {
+    font-size: 1.2rem;
+    color: var(--color-letras);
+}
+#nosotros .nosotros-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+#nosotros .nosotros-img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    /*background-image: linear-gradient(60deg, var(--color-btn) 0%,  var(--color-titulos) 100%);*/
+    opacity: 0.7;
+}
+#nosotros .nosotros-img img {
+    transition: 0.3s ease transform;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+#nosotros .nosotros-item:hover .nosotros-img img {
+    transform: scale(1.1);
+}
+@media only screen and (min-width: 768px) {
+    #nosotros .nosotros-item {
+        flex-direction: row;
+    }
+    #nosotros .nosotros-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    #nosotros .nosotros-item {
+        height: 400px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    #nosotros .all-nosotros .nosotros-info {
+        height: 100%;
+    }
+    #nosotros .all-nosotros .nosotros-img {
+        height: 100%;
+    }
+}
+                            /* -_-_-_- FINAL propiedades de sección nosotros -_-_-_- */
+
+                            /* -_-_-_- INICIO propiedades de sección novedades -_-_-_- */
+.cont_novedades {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-top: solid 2px var(--color-bordes);
+    border-bottom: solid 2px var(--color-bordes);
+}
+#novedades .novedades {
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#novedades .novedades-header h1 {
+    margin-bottom: 50px;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--color-titulos);
+}
+#novedades .novedades-video {
+    width: 100%;
+    max-width: 1024px;
+    max-height: 768px;
+}
+#novedades .novedades-video video {
+    width: 100%;
+    height: auto;
+}
+#novedades .novedades-banner {
+    max-width: 1024px;
+    max-height: 512px;
+    margin-top: 50px;
+}
+#novedades .novedades-banner img {
+    width: 100%;
+    height: auto;
+}
+#novedades .novedades-banner img:hover {
+    filter: saturate(250%)
+}
+                            /* -_-_-_- FINAL propiedades de sección novedades -_-_-_- */
+
+                            /* -_-_-_- INICIO propiedades del slider final -_-_-_- */
+.cont_slider {
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+}
+.slider02 {
+    display: flex;
+    width: 700%;
+    height: 600px;
+    margin-left: -100%;
+}
+.slider__section {
+    width: 100%;
+}
+.slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider__btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-btn);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider__btn img {
+    width: 50px;
+    height: 50px;
+}
+.slider__btn:hover {
+    background-color: var(--color-btnh);
+    width: 55px;
+    height: 55px;
+}
+.slider__btn img:hover {
+    width: 55px;
+    height: 55px;
+    opacity: 0.8;
+}
+.slider__btn__der {
+    right: 10px;
+}
+.slider__btn__izq {
+    left: 10px;
+}
+.slider__btn__izq img {
+    transform: rotate(180deg);
+}
+                            /* -_-_-_- FINAL propiedades del slider final -_-_-_- */
+
+                            /* -_-_-_- INICIO propiedades del pie de pagina -_-_-_- */
+.pie_pagina {
+    width: 80%;
+    margin: auto;
+    background-color: var(--color-fondos);
+    border-top: solid 2px var(--color-bordes);
+}
+.pie_pagina .pie_1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie_pagina .pie_1 .foo_1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie_pagina .pie_1 .foo_1 img{
+    width: 120px;
+}
+.pie_pagina .pie_1 .foo_2 h2{
+    color: var(--color-titulos);
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+.pie_pagina .pie_1 .foo_2 p{
+    color: var(--color-letras);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.pie_pagina .pie_1 .foo_2 a{
+    text-decoration: none;
+    color: var(--color-letras);
+}
+.pie_pagina .pie_1 .foo_3 h2{
+    color: var(--color-titulos);
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+.pie_pagina .pie_1 .foo_3 a{
+    display: inline-block;
+    text-decoration: none;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: all 300ms ease;
+}
+.pie_pagina .pie_1 .foo_3 img{
+    width: 55px;
+    height: 55px;
+}
+.pie_pagina .pie_1 .foo_3 img:hover{
+    opacity: 0.5;
+}
+.pie_2 {
+    width: 100%;
+    background: var(--color-btn);
+    padding: 15px 10px;
+    text-align: center;
+    color: var(--color-letras);
+}
+.pie_2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie_pagina .pie_1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+                            /* -_-_-_- FINAL propiedades del pie de pagina -_-_-_- */
+
+
